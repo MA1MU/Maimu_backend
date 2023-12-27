@@ -1,17 +1,40 @@
 spring:
+  # H2 Database 설정
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:~/test'     # H2 DB 연결 주소 (Embedded Mode)
+    username: sa              # H2 DB 접속 ID (사용자 지정)
+    password:                 # H2 DB 접속 PW (사용자 지정)
+
+  # H2 Console 설정
+  h2:
+    console: # H2 DB를 웹에서 관리할 수 있는 기능
+      enabled: true           # H2 Console 사용 여부
+      path: /h2-console       # H2 Console 접속 주소
+
+  # JPA 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update        # DB 초기화 전략 (none, create, create-drop, update, validate)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true      # 쿼리 로그 포맷 (정렬)
+        show_sql: true        # 쿼리 로그 출력
   security:
     oauth2:
       client:
         registration:
           google:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id:
+            client-secret:
             scope:
               - profile
               - email
           naver:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id:
+            client-secret:
             client-name: Naver
             redirect-uri: "http://localhost:8080/login/oauth2/code/naver"
             authorization-grant-type: authorization_code
@@ -19,11 +42,11 @@ spring:
               - name
               - email
           kakao:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id:
+            client-secret:
             client-name: Kakao
             client-authentication-method: POST
-            redirect-uri: [redirect-url]
+            redirect-uri: "http://localhost:8080/login/oauth2/code/kakao"
             authorization-grant-type: authorization_code
             scope:
               - profile_nickname

@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Table(name ="mainPage")
 public class Group {
 
     @Id @GeneratedValue

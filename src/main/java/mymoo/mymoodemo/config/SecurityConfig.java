@@ -35,6 +35,11 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/api/user").permitAll()
                 .and()
+                .headers().frameOptions().disable()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
+                .and()
                 .oauth2Login().userInfoEndpoint().userService(customOAuth2UserService);
         return http.build();
     }
