@@ -1,35 +1,35 @@
-package mymoo.mymoodemo.controller;
-
-import mymoo.mymoodemo.service.UserService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
-
-@RestController
-@RequestMapping("/api/user")
-public class UserController {
+//package mymoo.mymoodemo.controller;
 //
-//    private final UserService service;
+//import mymoo.mymoodemo.service.UserService;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.annotation.*;
 //
-//    public UserController(UserService service) {
-//        this.service = service;
-//    }
+//import java.util.Map;
 //
-//    @PostMapping("/login")
-//    public ResponseEntity<String> loginSuccess(@RequestBody Map<String, String> loginForm) {
-//        String token = service.login(loginForm.get("username"), loginForm.get("password"));
-//        return ResponseEntity.ok(token);
-//    }
+//@RestController
+//@RequestMapping("/api/user")
+//public class UserController {
+////
+////    private final UserService service;
+////
+////    public UserController(UserService service) {
+////        this.service = service;
+////    }
+////
+////    @PostMapping("/login")
+////    public ResponseEntity<String> loginSuccess(@RequestBody Map<String, String> loginForm) {
+////        String token = service.login(loginForm.get("username"), loginForm.get("password"));
+////        return ResponseEntity.ok(token);
+////    }
+////
+////    @PostMapping("/signup")
+////    public Long signup(@RequestBody SignupForm signupForm) {
+////        return service.signup(signupForm);
+////    }
+////
+////    @GetMapping("/signup/check/{email}/exists")
+////    public ResponseEntity<Boolean> checkEmailDuplicate(@PathVariable String email) {
+////        return ResponseEntity.ok(service.checkEmailExists(email));
+////    }
 //
-//    @PostMapping("/signup")
-//    public Long signup(@RequestBody SignupForm signupForm) {
-//        return service.signup(signupForm);
-//    }
-//
-//    @GetMapping("/signup/check/{email}/exists")
-//    public ResponseEntity<Boolean> checkEmailDuplicate(@PathVariable String email) {
-//        return ResponseEntity.ok(service.checkEmailExists(email));
-//    }
-
-}
+//}

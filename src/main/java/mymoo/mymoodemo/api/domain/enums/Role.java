@@ -1,4 +1,4 @@
-package mymoo.mymoodemo.domain.enums;
+package mymoo.mymoodemo.api.domain.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,10 +1,19 @@
-datasoure:
-  url: jdbc:h2:mem:testdb
-  driver-class-name: org.h2.Driver
-  username: sa
-  password:
-
 spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/maimudemo
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+
   security:
     oauth2:
       client:
@@ -17,7 +26,7 @@ spring:
               - email
           naver:
             client-id: MNDk0tDL3Lydd30J5mcD
-            client-secret: 4pzs3OoAv
+            client-secret: 4pzs3OoAv_
             client-name: Naver
             redirect-uri: "http://localhost:8080/login/oauth2/code/naver"
             authorization-grant-type: authorization_code
@@ -46,7 +55,11 @@ spring:
             tokenUri: https://kauth.kakao.com/oauth/token
             userInfoUri: https://kapi.kakao.com/v2/user/me
             userNameAttribute: id
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+
+logging.level:
+  #    org.hibernate.SQL: debug
+  org.hibernate.type: trace

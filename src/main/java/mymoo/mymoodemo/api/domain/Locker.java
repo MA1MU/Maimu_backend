@@ -1,7 +1,8 @@
-package mymoo.mymoodemo.domain;
+package mymoo.mymoodemo.api.domain;
 
 
 import lombok.Getter;
+import mymoo.mymoodemo.api.domain.group.Group;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,7 +29,5 @@ public class Locker {
         this.users = users;
         users.getLockers().add(this);
     }
-
-
 
 }
