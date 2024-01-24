@@ -1,7 +1,10 @@
 package mymoo.mymoodemo.api.domain;
 
 
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import mymoo.mymoodemo.api.domain.group.Group;
 
 import javax.persistence.*;
@@ -10,6 +13,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Locker {
 
     @Id @GeneratedValue
@@ -23,6 +27,12 @@ public class Locker {
 
     @OneToMany(mappedBy = "locker")
     private List<Group> groups = new ArrayList<>();
+
+    @Builder
+    public Locker(String lockerName, Users users){
+        this.lockerName = lockerName;
+        this.users = users;
+    }
 
 
     public void setUsers(Users users){
