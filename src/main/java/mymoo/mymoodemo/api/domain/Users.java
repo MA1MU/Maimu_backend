@@ -1,5 +1,6 @@
 package mymoo.mymoodemo.api.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import mymoo.mymoodemo.api.domain.enums.Role;
@@ -27,21 +28,21 @@ public class Users {
     @OneToMany(mappedBy = "users")
     private List<Locker> lockers = new ArrayList<>();
 
-//    @Builder
-//    public Users(Long id, String name, String email, String password, Role role){
-//        this.id = id;
-//        this.name = name;
-//        this.email = email;
-//        this.password = password;
-//        this.role = role;
-//    }
+    @Builder
+    public Users(Long id, String name, String email, String password, Role role){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 
-//    public Users update(String name){
-//        this.name = name;
-//        return this;
-//    }
-//
-//    public String getRoleKey() {
-//        return this.role.getKey();
-//    }
+    public Users update(String name){
+        this.name = name;
+        return this;
+    }
+
+    public String getRoleKey() {
+        return this.role.getKey();
+    }
 }

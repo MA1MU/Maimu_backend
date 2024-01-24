@@ -19,7 +19,6 @@ public class MaimuDelete {
     private String writerName;
 
     public MaimuDelete(){
-
     }
 
     public MaimuDelete(String message, String maimuColor, String writerName){
