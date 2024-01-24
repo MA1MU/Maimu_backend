@@ -29,7 +29,7 @@ public class Group {
     @JoinColumn(name = "locker_id")
     private Locker locker;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Maimu> maimus = new ArrayList<>();
 
     @Builder

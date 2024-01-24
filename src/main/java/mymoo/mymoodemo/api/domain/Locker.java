@@ -25,7 +25,7 @@ public class Locker {
     @JoinColumn(name = "users_id")
     private Users users;
 
-    @OneToMany(mappedBy = "locker")
+    @OneToMany(mappedBy = "locker", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Group> groups = new ArrayList<>();
 
     @Builder
